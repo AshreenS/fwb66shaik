@@ -7,7 +7,8 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var gucciRouter = require('./routes/gucci');
-var addmodRouter = require('./routes/addmod');
+var addmodsRouter = require('./routes/addmods');
+var selectorRouter = require('./routes/selector');
 
 var app = express();
 
@@ -24,7 +25,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/gucci', gucciRouter);
-app.use('/addmod', addmodRouter);
+app.use('/addmods', addmodsRouter);
+app.use('/selector', selectorRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
